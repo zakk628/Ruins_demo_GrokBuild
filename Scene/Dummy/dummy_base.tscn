@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bsvakaq01iu5u"]
+
+[ext_resource type="PackedScene" uid="uid://dhpn6uw22tch2" path="res://Assets/Dummy/Dummy.glb" id="1_einvc"]
+
+[node name="Dummy" unique_id=929723680 instance=ExtResource("1_einvc")]
+
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(1975856184) index="0" unique_id=1938982752]
+bones/4/rotation = Quaternion(-2.5709616e-07, 2.0371326e-07, -0.7071068, 0.7071068)
+bones/6/rotation = Quaternion(2.0371324e-07, 2.5709613e-07, 0.7071068, 0.7071068)
+
+[node name="arm_fore_arm_L" parent="Armature/Skeleton3D" index="1" unique_id=1571406184]
+transform = Transform3D(4.055507e-13, 1, 5.684343e-14, -1, 4.547486e-13, 7.549596e-08, 7.549482e-08, -5.684342e-14, 1, 8.4, 14.9, -6.1390893e-13)
+
+[node name="arm_upper_arm_L" parent="Armature/Skeleton3D" index="2" unique_id=1347512439]
+transform = Transform3D(5.1923553e-13, 1, 1.1368684e-13, -1, 5.6843343e-13, 7.549597e-08, 7.5494825e-08, -1.1368684e-13, 1, 2, 14.9, 1.1368684e-13)
+
+[node name="arm_fore_arm_R" parent="Armature/Skeleton3D" index="3" unique_id=637674223]
+transform = Transform3D(-4.055507e-13, -1, 1.0164395e-20, 1, -4.547486e-13, 7.549596e-08, -7.549479e-08, 0, 1, -8.4, 14.9, 2.5011105e-13)
+
+[node name="arm_upper_arm_R" parent="Armature/Skeleton3D" index="4" unique_id=1066963306]
+transform = Transform3D(-5.1923553e-13, -1, 5.684342e-14, 1, -5.6843343e-13, 7.549597e-08, -7.5494796e-08, 5.684342e-14, 1, -2, 14.9, -1.1368684e-13)

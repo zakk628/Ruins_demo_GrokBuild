@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cyfllen3woxww"]
+
+[ext_resource type="Script" uid="uid://c437b2yr48lbw" path="res://GDScript/Tool/lock_mark.gd" id="1_dri22"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2vghd"]
+height = 0.5
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_dri22"]
+height = 0.5
+
+[node name="Lock_Mark" type="StaticBody3D" unique_id=1318964359]
+script = ExtResource("1_dri22")
+
+[node name="Lock_Mesh" type="MeshInstance3D" parent="." unique_id=1184114735]
+mesh = SubResource("CylinderMesh_2vghd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1123285754]
+shape = SubResource("CylinderShape3D_dri22")

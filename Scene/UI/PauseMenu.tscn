@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bh7prlb0y0nv7"]
+
+[ext_resource type="Script" uid="uid://dquuhbdjmilr6" path="res://GDScript/UI/PauseMenu.gd" id="1_qwx4l"]
+
+[node name="PauseMenu" type="Control" unique_id=1376896658]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qwx4l")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1626179186]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.19607843)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=338016732]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -35.0
+offset_right = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=558662098]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Button_Resume" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=10829631]
+layout_mode = 2
+text = "Resume"
+
+[node name="Button_Save" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=294015749]
+layout_mode = 2
+text = "Save"
+
+[node name="Button_Load" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=1007131284]
+layout_mode = 2
+text = "Load"
+
+[node name="Button_Setting" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=2122896157]
+layout_mode = 2
+text = "Setting"
+
+[node name="Button_Quit" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=333814386]
+layout_mode = 2
+text = "Quit"

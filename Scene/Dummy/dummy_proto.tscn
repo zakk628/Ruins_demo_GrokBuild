@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://bcnipeinj6hay"]
+
+[ext_resource type="Script" uid="uid://bhr315ivgc7h8" path="res://GDScript/Dummy/dummy.gd" id="1_cwtpg"]
+[ext_resource type="PackedScene" uid="uid://b7gptmr7ip3rj" path="res://Scene/Dummy/dummy_proto_base.tscn" id="2_cwtpg"]
+[ext_resource type="Script" uid="uid://ck8qjfsm56nih" path="res://GDScript/Dummy/dummy_con_health.gd" id="2_ktmrb"]
+[ext_resource type="PackedScene" uid="uid://cyfllen3woxww" path="res://Scene/Tool/lock_mark.tscn" id="3_joeur"]
+[ext_resource type="Script" uid="uid://cmxwfq71i8aro" path="res://GDScript/Dummy/dummy_con_ai.gd" id="4_ktmrb"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_cgs71"]
+height = 22.0
+radius = 1.5
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_joeur"]
+graph_offset = Vector2(57, 46)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6gpqn"]
+height = 22.0
+radius = 3.0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ktmrb"]
+viewport_path = NodePath("HealthBar/SubViewportContainer/SubViewport")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3t225"]
+bg_color = Color(0, 1, 0.26666668, 1)
+
+[node name="dummy_base" type="CharacterBody3D" unique_id=530226939]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+script = ExtResource("1_cwtpg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=993149777]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0)
+shape = SubResource("CylinderShape3D_cgs71")
+
+[node name="Dummy_Proto" parent="." unique_id=1388630586 instance=ExtResource("2_cwtpg")]
+
+[node name="Skeleton3D" parent="Dummy_Proto/Armature" parent_id_path=PackedInt32Array(1388630586, 260290309) index="0" unique_id=755538862]
+bones/13/rotation = Quaternion(0.70710677, 5.900559e-07, -5.900559e-07, 0.70710677)
+bones/27/position = Vector3(5.0694566, -3.9064808, -2.7653064e-07)
+bones/30/position = Vector3(-5.0694566, -3.9064808, -2.7653064e-07)
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=546861930]
+root_node = NodePath("../Dummy_Proto")
+tree_root = SubResource("AnimationNodeBlendTree_joeur")
+anim_player = NodePath("../Dummy_Proto/AnimationPlayer")
+
+[node name="Hurtbox" type="Area3D" parent="." unique_id=668507184 groups=["HurtBox"]]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=765324061]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0)
+shape = SubResource("CylinderShape3D_6gpqn")
+
+[node name="HealthBar" type="Sprite3D" parent="." unique_id=1999129820]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 35, 0)
+billboard = 2
+texture = SubResource("ViewportTexture_ktmrb")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HealthBar" unique_id=921107915]
+custom_minimum_size = Vector2(200, 30)
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 216.0
+offset_bottom = 46.0
+
+[node name="SubViewport" type="SubViewport" parent="HealthBar/SubViewportContainer" unique_id=110564384]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(200, 30)
+render_target_update_mode = 4
+
+[node name="ProgressBar" type="ProgressBar" parent="HealthBar/SubViewportContainer/SubViewport" unique_id=2119004360]
+custom_minimum_size = Vector2(200, 30)
+offset_right = 200.0
+offset_bottom = 30.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_3t225")
+value = 100.0
+
+[node name="Controller" type="Node" parent="." unique_id=961664728]
+
+[node name="HealthController" type="Node" parent="Controller" unique_id=1502528706]
+script = ExtResource("2_ktmrb")
+
+[node name="AIController" type="Node" parent="Controller" unique_id=1699270023]
+script = ExtResource("4_ktmrb")
+
+[node name="Lock_Mark" parent="." unique_id=1670712922 groups=["lock_target"] instance=ExtResource("3_joeur")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 13.533325, 1.7272949)
+
+[editable path="Dummy_Proto"]

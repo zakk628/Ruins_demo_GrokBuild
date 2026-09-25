@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://ds57ncg2061dw"]
+
+[ext_resource type="Script" uid="uid://bhr315ivgc7h8" path="res://GDScript/Dummy/dummy.gd" id="1_6gpqn"]
+[ext_resource type="PackedScene" uid="uid://bsvakaq01iu5u" path="res://Scene/Dummy/dummy_base.tscn" id="2_3t225"]
+[ext_resource type="Script" uid="uid://ck8qjfsm56nih" path="res://GDScript/Dummy/dummy_con_health.gd" id="3_euntp"]
+[ext_resource type="PackedScene" uid="uid://cyfllen3woxww" path="res://Scene/Tool/lock_mark.tscn" id="4_3t225"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_cgs71"]
+height = 22.0
+radius = 1.5
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6gpqn"]
+height = 22.0
+radius = 3.0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_cgs71"]
+viewport_path = NodePath("HealthBar/SubViewportContainer/SubViewport")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3t225"]
+bg_color = Color(0, 1, 0.26666668, 1)
+
+[node name="dummy_base" type="StaticBody3D" unique_id=591087614]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+script = ExtResource("1_6gpqn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=993149777]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0)
+shape = SubResource("CylinderShape3D_cgs71")
+
+[node name="Dummy" parent="." unique_id=929723680 instance=ExtResource("2_3t225")]
+
+[node name="Hurtbox" type="Area3D" parent="." unique_id=668507184 groups=["HurtBox"]]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=765324061]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0)
+shape = SubResource("CylinderShape3D_6gpqn")
+
+[node name="HealthBar" type="Sprite3D" parent="." unique_id=1999129820]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 24, 0)
+billboard = 2
+texture = SubResource("ViewportTexture_cgs71")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HealthBar" unique_id=921107915]
+custom_minimum_size = Vector2(200, 30)
+offset_left = -230.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = 60.0
+
+[node name="SubViewport" type="SubViewport" parent="HealthBar/SubViewportContainer" unique_id=110564384]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(200, 30)
+render_target_update_mode = 4
+
+[node name="ProgressBar" type="ProgressBar" parent="HealthBar/SubViewportContainer/SubViewport" unique_id=2119004360]
+custom_minimum_size = Vector2(200, 30)
+offset_right = 200.0
+offset_bottom = 30.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_3t225")
+value = 100.0
+
+[node name="Controller" type="Node" parent="." unique_id=961664728]
+
+[node name="HealthController" type="Node" parent="Controller" unique_id=1502528706]
+script = ExtResource("3_euntp")
+
+[node name="Lock_Mark" parent="." unique_id=1670712922 groups=["lock_target"] instance=ExtResource("4_3t225")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 13.533325, 1.7272949)
+
+[editable path="Dummy"]
