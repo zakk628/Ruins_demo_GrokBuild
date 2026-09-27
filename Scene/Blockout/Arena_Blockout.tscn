@@ -1,0 +1,429 @@
+[gd_scene format=3 uid="uid://c4arena0blk01"]
+
+[ext_resource type="PackedScene" uid="uid://c4columnblk01" path="res://Scene/Blockout/Column.tscn" id="1_column"]
+[ext_resource type="PackedScene" uid="uid://c4wallhigh001" path="res://Scene/Blockout/Wall_High.tscn" id="2_wallhi"]
+[ext_resource type="PackedScene" uid="uid://c4walllow0001" path="res://Scene/Blockout/Wall_Low.tscn" id="3_walllo"]
+
+[sub_resource type="CylinderMesh" id="Mesh_floor"]
+top_radius = 50.0
+bottom_radius = 50.0
+height = 1.0
+radial_segments = 72
+
+[sub_resource type="StandardMaterial3D" id="Mat_floor"]
+albedo_color = Color(0.55, 0.56, 0.58, 1)
+
+[sub_resource type="CylinderShape3D" id="Shape_floor"]
+height = 1.0
+radius = 50.0
+
+[sub_resource type="BoxMesh" id="Mesh_mark"]
+size = Vector3(20, 0.02, 20)
+
+[sub_resource type="StandardMaterial3D" id="Mat_mark"]
+albedo_color = Color(0.35, 0.42, 0.38, 1)
+
+[sub_resource type="BoxMesh" id="Mesh_audience"]
+size = Vector3(10.452846, 10, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_audience"]
+albedo_color = Color(0.88, 0.88, 0.9, 1)
+
+[sub_resource type="BoxShape3D" id="Shape_audience"]
+size = Vector3(10.452846, 10, 0.5)
+
+[sub_resource type="BoxMesh" id="Mesh_governor"]
+size = Vector3(12, 1, 4.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_governor"]
+albedo_color = Color(0.75, 0.55, 0.38, 1)
+
+[sub_resource type="BoxShape3D" id="Shape_governor"]
+size = Vector3(12, 1, 4.5)
+
+[node name="Arena_Blockout" type="Node3D" unique_id=820652909]
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=464168588]
+
+[node name="Mesh" type="MeshInstance3D" parent="Floor" unique_id=1114667252]
+mesh = SubResource("Mesh_floor")
+surface_material_override/0 = SubResource("Mat_floor")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1055173901]
+shape = SubResource("Shape_floor")
+
+[node name="DuelMark" type="MeshInstance3D" parent="." unique_id=440318822]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.511, 0)
+mesh = SubResource("Mesh_mark")
+surface_material_override/0 = SubResource("Mat_mark")
+
+[node name="AudienceRing" type="Node3D" parent="." unique_id=510623223]
+
+[node name="Wall_090" type="StaticBody3D" parent="AudienceRing" unique_id=1701226695]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 50)
+
+[node name="Mesh" type="MeshInstance3D" parent="AudienceRing/Wall_090" unique_id=892045211]
+mesh = SubResource("Mesh_audience")
+surface_material_override/0 = SubResource("Mat_audience")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudienceRing/Wall_090" unique_id=120901385]
+shape = SubResource("Shape_audience")
+
+[node name="Wall_102" type="StaticBody3D" parent="AudienceRing" unique_id=1733590102]
+transform = Transform3D(0.978148, 0, 0.207912, 0, 1, 0, -0.207912, 0, 0.978148, -10.395585, 5.5, 48.90738)
+
+[node name="Mesh" type="MeshInstance3D" parent="AudienceRing/Wall_102" unique_id=526387050]
+mesh = SubResource("Mesh_audience")
+surface_material_override/0 = SubResource("Mat_audience")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudienceRing/Wall_102" unique_id=249747499]
+shape = SubResource("Shape_audience")
+
+[node name="Wall_114" type="StaticBody3D" parent="AudienceRing" unique_id=999720167]
+transform = Transform3D(0.913545, 0, 0.406737, 0, 1, 0, -0.406737, 0, 0.913545, -20.336832, 5.5, 45.677273)
+
+[node name="Mesh" type="MeshInstance3D" parent="AudienceRing/Wall_114" unique_id=1482532891]
+mesh = SubResource("Mesh_audience")
+surface_material_override/0 = SubResource("Mat_audience")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudienceRing/Wall_114" unique_id=339510006]
+shape = SubResource("Shape_audience")
+
+[node name="Wall_126" type="StaticBody3D" parent="AudienceRing" unique_id=163216628]
+transform = Transform3D(0.809017, 0, 0.587785, 0, 1, 0, -0.587785, 0, 0.809017, -29.389263, 5.5, 40.45085)
+
+[node name="Mesh" type="MeshInstance3D" parent="AudienceRing/Wall_126" unique_id=1578430712]
+mesh = SubResource("Mesh_audience")
+surface_material_override/0 = SubResource("Mat_audience")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudienceRing/Wall_126" unique_id=108309753]
+shape = SubResource("Shape_audience")
+
+[node name="Wall_138" type="StaticBody3D" parent="AudienceRing" unique_id=1851715591]
+transform = Transform3D(0.669131, 0, 0.743145, 0, 1, 0, -0.743145, 0, 0.669131, -37.15724, 5.5, 33.45653)
+
+[node name="Mesh" type="MeshInstance3D" parent="AudienceRing/Wall_138" unique_id=1175143217]
+mesh = SubResource("Mesh_audience")
+surface_material_override/0 = SubResource("Mat_audience")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudienceRing/Wall_138" unique_id=1147317551]
+shape = SubResource("Shape_audience")
+
+[node name="Wall_150" type="StaticBody3D" parent="AudienceRing" unique_id=674302282]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -43.30127, 5.5, 25)
+
+[node name="Mesh" type="MeshInstance3D" parent="AudienceRing/Wall_150" unique_id=1565278193]
+mesh = SubResource("Mesh_audience")
+surface_material_override/0 = SubResource("Mat_audience")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudienceRing/Wall_150" unique_id=1338160142]
+shape = SubResource("Shape_audience")
+
+[node name="Wall_162" type="StaticBody3D" parent="AudienceRing" unique_id=1396192752]
+transform = Transform3D(0.309017, 0, 0.951057, 0, 1, 0, -0.951057, 0, 0.309017, -47.552826, 5.5, 15.45085)
+
+[node name="Mesh" type="MeshInstance3D" parent="AudienceRing/Wall_162" unique_id=370449530]
+mesh = SubResource("Mesh_audience")
+surface_material_override/0 = SubResource("Mat_audience")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudienceRing/Wall_162" unique_id=336690964]
+shape = SubResource("Shape_audience")
+
+[node name="Wall_174" type="StaticBody3D" parent="AudienceRing" unique_id=481010958]
+transform = Transform3D(0.104528, 0, 0.994522, 0, 1, 0, -0.994522, 0, 0.104528, -49.726093, 5.5, 5.226423)
+
+[node name="Mesh" type="MeshInstance3D" parent="AudienceRing/Wall_174" unique_id=247892745]
+mesh = SubResource("Mesh_audience")
+surface_material_override/0 = SubResource("Mat_audience")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudienceRing/Wall_174" unique_id=1859842878]
+shape = SubResource("Shape_audience")
+
+[node name="Wall_186" type="StaticBody3D" parent="AudienceRing" unique_id=1515638270]
+transform = Transform3D(-0.104528, 0, 0.994522, 0, 1, 0, -0.994522, 0, -0.104528, -49.726093, 5.5, -5.226423)
+
+[node name="Mesh" type="MeshInstance3D" parent="AudienceRing/Wall_186" unique_id=329145453]
+mesh = SubResource("Mesh_audience")
+surface_material_override/0 = SubResource("Mat_audience")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudienceRing/Wall_186" unique_id=1114928957]
+shape = SubResource("Shape_audience")
+
+[node name="Wall_198" type="StaticBody3D" parent="AudienceRing" unique_id=589764551]
+transform = Transform3D(-0.30901697, 0, 0.9510571, 0, 1, 0, -0.9510571, 0, -0.30901697, -47.552826, 5.5, -15.45085)
+
+[node name="Mesh" type="MeshInstance3D" parent="AudienceRing/Wall_198" unique_id=2049752404]
+mesh = SubResource("Mesh_audience")
+surface_material_override/0 = SubResource("Mat_audience")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudienceRing/Wall_198" unique_id=808716514]
+shape = SubResource("Shape_audience")
+
+[node name="Wall_210" type="StaticBody3D" parent="AudienceRing" unique_id=1443542824]
+transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, -43.30127, 5.5, -25)
+
+[node name="Mesh" type="MeshInstance3D" parent="AudienceRing/Wall_210" unique_id=2003885262]
+mesh = SubResource("Mesh_audience")
+surface_material_override/0 = SubResource("Mat_audience")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudienceRing/Wall_210" unique_id=131913710]
+shape = SubResource("Shape_audience")
+
+[node name="Wall_222" type="StaticBody3D" parent="AudienceRing" unique_id=1234905899]
+transform = Transform3D(-0.669131, 0, 0.743145, 0, 1, 0, -0.743145, 0, -0.669131, -37.15724, 5.5, -33.45653)
+
+[node name="Mesh" type="MeshInstance3D" parent="AudienceRing/Wall_222" unique_id=1755517042]
+mesh = SubResource("Mesh_audience")
+surface_material_override/0 = SubResource("Mat_audience")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudienceRing/Wall_222" unique_id=2108406760]
+shape = SubResource("Shape_audience")
+
+[node name="Wall_234" type="StaticBody3D" parent="AudienceRing" unique_id=1863506173]
+transform = Transform3D(-0.809017, 0, 0.587785, 0, 1, 0, -0.587785, 0, -0.809017, -29.389263, 5.5, -40.45085)
+
+[node name="Mesh" type="MeshInstance3D" parent="AudienceRing/Wall_234" unique_id=1289160140]
+mesh = SubResource("Mesh_audience")
+surface_material_override/0 = SubResource("Mat_audience")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudienceRing/Wall_234" unique_id=57500262]
+shape = SubResource("Shape_audience")
+
+[node name="Wall_246" type="StaticBody3D" parent="AudienceRing" unique_id=430823327]
+transform = Transform3D(-0.913545, 0, 0.406737, 0, 1, 0, -0.406737, 0, -0.913545, -20.336832, 5.5, -45.677273)
+
+[node name="Mesh" type="MeshInstance3D" parent="AudienceRing/Wall_246" unique_id=2130878817]
+mesh = SubResource("Mesh_audience")
+surface_material_override/0 = SubResource("Mat_audience")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudienceRing/Wall_246" unique_id=497049115]
+shape = SubResource("Shape_audience")
+
+[node name="Wall_258" type="StaticBody3D" parent="AudienceRing" unique_id=836178268]
+transform = Transform3D(-0.978148, 0, 0.207912, 0, 1, 0, -0.207912, 0, -0.978148, -10.395585, 5.5, -48.90738)
+
+[node name="Mesh" type="MeshInstance3D" parent="AudienceRing/Wall_258" unique_id=1511246837]
+mesh = SubResource("Mesh_audience")
+surface_material_override/0 = SubResource("Mat_audience")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudienceRing/Wall_258" unique_id=1603916777]
+shape = SubResource("Shape_audience")
+
+[node name="Wall_282" type="StaticBody3D" parent="AudienceRing" unique_id=1955823634]
+transform = Transform3D(-0.978148, 0, -0.207912, 0, 1, 0, 0.207912, 0, -0.978148, 10.395585, 5.5, -48.90738)
+
+[node name="Mesh" type="MeshInstance3D" parent="AudienceRing/Wall_282" unique_id=1920300608]
+mesh = SubResource("Mesh_audience")
+surface_material_override/0 = SubResource("Mat_audience")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudienceRing/Wall_282" unique_id=148676241]
+shape = SubResource("Shape_audience")
+
+[node name="Wall_294" type="StaticBody3D" parent="AudienceRing" unique_id=106883913]
+transform = Transform3D(-0.913545, 0, -0.406737, 0, 1, 0, 0.406737, 0, -0.913545, 20.336832, 5.5, -45.677273)
+
+[node name="Mesh" type="MeshInstance3D" parent="AudienceRing/Wall_294" unique_id=1950195436]
+mesh = SubResource("Mesh_audience")
+surface_material_override/0 = SubResource("Mat_audience")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudienceRing/Wall_294" unique_id=1174865944]
+shape = SubResource("Shape_audience")
+
+[node name="Wall_306" type="StaticBody3D" parent="AudienceRing" unique_id=1751495728]
+transform = Transform3D(-0.809017, 0, -0.587785, 0, 1, 0, 0.587785, 0, -0.809017, 29.389263, 5.5, -40.45085)
+
+[node name="Mesh" type="MeshInstance3D" parent="AudienceRing/Wall_306" unique_id=798318423]
+mesh = SubResource("Mesh_audience")
+surface_material_override/0 = SubResource("Mat_audience")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudienceRing/Wall_306" unique_id=450210213]
+shape = SubResource("Shape_audience")
+
+[node name="Wall_318" type="StaticBody3D" parent="AudienceRing" unique_id=1535554541]
+transform = Transform3D(-0.669131, 0, -0.743145, 0, 1, 0, 0.743145, 0, -0.669131, 37.15724, 5.5, -33.45653)
+
+[node name="Mesh" type="MeshInstance3D" parent="AudienceRing/Wall_318" unique_id=1324307220]
+mesh = SubResource("Mesh_audience")
+surface_material_override/0 = SubResource("Mat_audience")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudienceRing/Wall_318" unique_id=267192015]
+shape = SubResource("Shape_audience")
+
+[node name="Wall_330" type="StaticBody3D" parent="AudienceRing" unique_id=1848085402]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 43.30127, 5.5, -25)
+
+[node name="Mesh" type="MeshInstance3D" parent="AudienceRing/Wall_330" unique_id=1756171490]
+mesh = SubResource("Mesh_audience")
+surface_material_override/0 = SubResource("Mat_audience")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudienceRing/Wall_330" unique_id=1700351679]
+shape = SubResource("Shape_audience")
+
+[node name="Wall_342" type="StaticBody3D" parent="AudienceRing" unique_id=1443325861]
+transform = Transform3D(-0.309017, 0, -0.951057, 0, 1, 0, 0.951057, 0, -0.309017, 47.552826, 5.5, -15.45085)
+
+[node name="Mesh" type="MeshInstance3D" parent="AudienceRing/Wall_342" unique_id=533165899]
+mesh = SubResource("Mesh_audience")
+surface_material_override/0 = SubResource("Mat_audience")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudienceRing/Wall_342" unique_id=1928771556]
+shape = SubResource("Shape_audience")
+
+[node name="Wall_354" type="StaticBody3D" parent="AudienceRing" unique_id=1945594175]
+transform = Transform3D(-0.104528, 0, -0.994522, 0, 1, 0, 0.994522, 0, -0.104528, 49.726093, 5.5, -5.226423)
+
+[node name="Mesh" type="MeshInstance3D" parent="AudienceRing/Wall_354" unique_id=1098984478]
+mesh = SubResource("Mesh_audience")
+surface_material_override/0 = SubResource("Mat_audience")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudienceRing/Wall_354" unique_id=1097217590]
+shape = SubResource("Shape_audience")
+
+[node name="Wall_006" type="StaticBody3D" parent="AudienceRing" unique_id=1603430758]
+transform = Transform3D(0.104528, 0, -0.994522, 0, 1, 0, 0.994522, 0, 0.104528, 49.726093, 5.5, 5.226423)
+
+[node name="Mesh" type="MeshInstance3D" parent="AudienceRing/Wall_006" unique_id=1798220285]
+mesh = SubResource("Mesh_audience")
+surface_material_override/0 = SubResource("Mat_audience")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudienceRing/Wall_006" unique_id=567199124]
+shape = SubResource("Shape_audience")
+
+[node name="Wall_018" type="StaticBody3D" parent="AudienceRing" unique_id=838422467]
+transform = Transform3D(0.309017, 0, -0.951057, 0, 1, 0, 0.951057, 0, 0.309017, 47.552826, 5.5, 15.45085)
+
+[node name="Mesh" type="MeshInstance3D" parent="AudienceRing/Wall_018" unique_id=622297743]
+mesh = SubResource("Mesh_audience")
+surface_material_override/0 = SubResource("Mat_audience")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudienceRing/Wall_018" unique_id=2002324864]
+shape = SubResource("Shape_audience")
+
+[node name="Wall_030" type="StaticBody3D" parent="AudienceRing" unique_id=1624653345]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 43.30127, 5.5, 25)
+
+[node name="Mesh" type="MeshInstance3D" parent="AudienceRing/Wall_030" unique_id=1474647696]
+mesh = SubResource("Mesh_audience")
+surface_material_override/0 = SubResource("Mat_audience")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudienceRing/Wall_030" unique_id=313898808]
+shape = SubResource("Shape_audience")
+
+[node name="Wall_042" type="StaticBody3D" parent="AudienceRing" unique_id=754482572]
+transform = Transform3D(0.669131, 0, -0.743145, 0, 1, 0, 0.743145, 0, 0.669131, 37.15724, 5.5, 33.45653)
+
+[node name="Mesh" type="MeshInstance3D" parent="AudienceRing/Wall_042" unique_id=2143812254]
+mesh = SubResource("Mesh_audience")
+surface_material_override/0 = SubResource("Mat_audience")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudienceRing/Wall_042" unique_id=1295680784]
+shape = SubResource("Shape_audience")
+
+[node name="Wall_054" type="StaticBody3D" parent="AudienceRing" unique_id=1969926106]
+transform = Transform3D(0.809017, 0, -0.587785, 0, 1, 0, 0.587785, 0, 0.809017, 29.389263, 5.5, 40.45085)
+
+[node name="Mesh" type="MeshInstance3D" parent="AudienceRing/Wall_054" unique_id=371180492]
+mesh = SubResource("Mesh_audience")
+surface_material_override/0 = SubResource("Mat_audience")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudienceRing/Wall_054" unique_id=682352371]
+shape = SubResource("Shape_audience")
+
+[node name="Wall_066" type="StaticBody3D" parent="AudienceRing" unique_id=1944968063]
+transform = Transform3D(0.913545, 0, -0.406737, 0, 1, 0, 0.406737, 0, 0.913545, 20.336832, 5.5, 45.677273)
+
+[node name="Mesh" type="MeshInstance3D" parent="AudienceRing/Wall_066" unique_id=231302065]
+mesh = SubResource("Mesh_audience")
+surface_material_override/0 = SubResource("Mat_audience")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudienceRing/Wall_066" unique_id=1188756518]
+shape = SubResource("Shape_audience")
+
+[node name="Wall_078" type="StaticBody3D" parent="AudienceRing" unique_id=1645774298]
+transform = Transform3D(0.978148, 0, -0.207912, 0, 1, 0, 0.207912, 0, 0.978148, 10.395585, 5.5, 48.90738)
+
+[node name="Mesh" type="MeshInstance3D" parent="AudienceRing/Wall_078" unique_id=424911684]
+mesh = SubResource("Mesh_audience")
+surface_material_override/0 = SubResource("Mat_audience")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudienceRing/Wall_078" unique_id=1419280916]
+shape = SubResource("Shape_audience")
+
+[node name="GovernorPlatform" type="StaticBody3D" parent="AudienceRing" unique_id=2082374249]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.98, 48)
+
+[node name="Mesh" type="MeshInstance3D" parent="AudienceRing/GovernorPlatform" unique_id=609724198]
+mesh = SubResource("Mesh_governor")
+surface_material_override/0 = SubResource("Mat_governor")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudienceRing/GovernorPlatform" unique_id=1941218844]
+shape = SubResource("Shape_governor")
+
+[node name="Gate" type="Node3D" parent="AudienceRing" unique_id=2020965491]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -50)
+
+[node name="Columns" type="Node3D" parent="." unique_id=1073416534]
+
+[node name="Column_090" parent="Columns" unique_id=1036685292 instance=ExtResource("1_column")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 5.5, 40)
+
+[node name="Column_120" parent="Columns" unique_id=1125270693 instance=ExtResource("1_column")]
+transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -20, 5.5, 34.641014)
+
+[node name="Column_150" parent="Columns" unique_id=1291429828 instance=ExtResource("1_column")]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -34.641014, 5.5, 20)
+
+[node name="Column_180" parent="Columns" unique_id=94167197 instance=ExtResource("1_column")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -40, 5.5, 0)
+
+[node name="Column_210" parent="Columns" unique_id=1961932996 instance=ExtResource("1_column")]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -34.641014, 5.5, -20)
+
+[node name="Column_240" parent="Columns" unique_id=1019099602 instance=ExtResource("1_column")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -20, 5.5, -34.641014)
+
+[node name="Column_270" parent="Columns" unique_id=323782674 instance=ExtResource("1_column")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, -40)
+
+[node name="Column_300" parent="Columns" unique_id=1010259114 instance=ExtResource("1_column")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 20, 5.5, -34.641014)
+
+[node name="Column_330" parent="Columns" unique_id=1387614514 instance=ExtResource("1_column")]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 34.641014, 5.5, -20)
+
+[node name="Column_000" parent="Columns" unique_id=2045648572 instance=ExtResource("1_column")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 40, 5.5, 0)
+
+[node name="Column_030" parent="Columns" unique_id=60098616 instance=ExtResource("1_column")]
+transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 34.641014, 5.5, 20)
+
+[node name="Column_060" parent="Columns" unique_id=411291659 instance=ExtResource("1_column")]
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 20, 5.5, 34.641014)
+
+[node name="HighWalls" type="Node3D" parent="." unique_id=1396177648]
+
+[node name="WallHigh_015" parent="HighWalls" unique_id=1147654259 instance=ExtResource("2_wallhi")]
+transform = Transform3D(-0.25881907, 0, -0.96592593, 0, 1, 0, 0.96592593, 0, -0.25881907, 28.977776, 4, 7.764571)
+
+[node name="WallHigh_075" parent="HighWalls" unique_id=1421679831 instance=ExtResource("2_wallhi")]
+transform = Transform3D(-0.96592593, 0, -0.25881916, 0, 1, 0, 0.25881916, 0, -0.96592593, 7.764571, 4, 28.977776)
+
+[node name="WallHigh_135" parent="HighWalls" unique_id=1395448540 instance=ExtResource("2_wallhi")]
+transform = Transform3D(-0.70710695, 0, 0.70710695, 0, 1, 0, -0.70710695, 0, -0.70710695, -21.213203, 4, 21.213203)
+
+[node name="WallHigh_195" parent="HighWalls" unique_id=1951241363 instance=ExtResource("2_wallhi")]
+transform = Transform3D(0.2588191, 0, 0.96592593, 0, 1, 0, -0.96592593, 0, 0.2588191, -28.977776, 4, -7.764571)
+
+[node name="WallHigh_255" parent="HighWalls" unique_id=521167038 instance=ExtResource("2_wallhi")]
+transform = Transform3D(0.96592593, 0, 0.25881907, 0, 1, 0, -0.25881907, 0, 0.96592593, -7.764571, 4, -28.977776)
+
+[node name="WallHigh_315" parent="HighWalls" unique_id=1057218254 instance=ExtResource("2_wallhi")]
+transform = Transform3D(0.70710695, 0, -0.70710695, 0, 1, 0, 0.70710695, 0, 0.70710695, 21.213203, 4, -21.213203)
+
+[node name="LowWalls" type="Node3D" parent="." unique_id=1589437433]
+
+[node name="WallLow_L" parent="LowWalls" unique_id=913519496 instance=ExtResource("3_walllo")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -5, 3, 0)
+
+[node name="WallLow_R" parent="LowWalls" unique_id=649605361 instance=ExtResource("3_walllo")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 5, 3, 0)

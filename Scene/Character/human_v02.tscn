@@ -429,22 +429,22 @@ shape = SubResource("CylinderShape3D_xo2cf")
 [node name="Human_proto_02" parent="Character" unique_id=1196033314 instance=ExtResource("2_tps6v")]
 
 [node name="Skeleton3D" parent="Character/Human_proto_02/Prototype_Rig" parent_id_path=PackedInt32Array(1196033314, 668524163) index="0" unique_id=449932767]
-bones/9/position = Vector3(-2.9106254e-06, -4, -8.932646)
-bones/19/rotation = Quaternion(0.25900298, 0.24567911, -0.033552244, 0.933506)
-bones/43/rotation = Quaternion(0.25900307, -0.24567881, 0.03355248, 0.9335062)
-bones/69/rotation = Quaternion(0.97592616, 0.06901, -0.08771145, 0.18738335)
-bones/70/rotation = Quaternion(0.1790159, 0.010794013, 0.028758632, 0.98336655)
-bones/71/rotation = Quaternion(-0.63867056, -0.026584754, 0.040522043, 0.76795256)
-bones/79/rotation = Quaternion(0.975926, -0.069011785, 0.08771996, 0.18737994)
-bones/80/rotation = Quaternion(0.1790159, -0.01079402, -0.028758626, 0.98336655)
-bones/81/rotation = Quaternion(-0.63867056, 0.026584752, -0.040522046, 0.76795256)
-bones/89/position = Vector3(-4.539832e-06, -4, -13.932646)
+bones/9/position = Vector3(-2.8674826e-06, -4, -8.800241)
+bones/19/rotation = Quaternion(0.25901094, 0.24588996, -0.033493746, 0.93345034)
+bones/43/rotation = Quaternion(0.25901088, -0.24588968, 0.03349393, 0.9334505)
+bones/69/rotation = Quaternion(0.9689954, 0.07684751, -0.09235039, 0.21590237)
+bones/70/rotation = Quaternion(0.24166702, 0.010642058, 0.038823448, 0.96952397)
+bones/71/rotation = Quaternion(-0.6648985, -0.030017402, 0.045622975, 0.7449346)
+bones/79/rotation = Quaternion(0.9689954, -0.07684751, 0.09235035, 0.21590237)
+bones/80/rotation = Quaternion(0.24166699, -0.010642063, -0.03882344, 0.96952397)
+bones/81/rotation = Quaternion(-0.6648985, 0.030017404, -0.04562297, 0.7449346)
+bones/89/position = Vector3(-4.4966896e-06, -4, -13.800241)
 
 [node name="spine_006" parent="Character/Human_proto_02/Prototype_Rig/Skeleton3D" index="0" unique_id=1771535050]
-transform = Transform3D(1, -1.2043111e-14, -2.379127e-13, 3.1068637e-14, 0.9999998, -5.9604645e-08, 2.5925011e-13, 1.4901161e-08, 1, -2.9043226e-13, 16.77922, 0.23359948)
+transform = Transform3D(1, -1.2043111e-14, -2.379127e-13, 3.1068637e-14, 0.9999998, -5.9604645e-08, 2.5925011e-13, 1.4901161e-08, 1, -5.1780596e-13, 16.646816, 0.23359948)
 
 [node name="weapon_L" parent="Character/Human_proto_02/Prototype_Rig/Skeleton3D" index="1" unique_id=1055718905]
-transform = Transform3D(0.30573612, 0.5832375, -0.7525685, -0.9445399, 0.28530747, -0.16261387, 0.1198712, 0.7605479, 0.63811946, 3.4695234, 8.5304985, 0.5605687)
+transform = Transform3D(0.305848, 0.5828803, -0.75279975, -0.9445004, 0.28532836, -0.16280738, 0.1198982, 0.76081395, 0.63779724, 3.4694276, 8.398019, 0.5604492)
 
 [node name="Hitbox_L" type="Area3D" parent="Character/Human_proto_02/Prototype_Rig/Skeleton3D/weapon_L" index="1" unique_id=1646349965]
 transform = Transform3D(0.99983525, 0.016681602, -0.007233469, -0.01612638, 0.99734586, 0.07101998, 0.008399042, -0.07089165, 0.99744964, -0.0020008087, 0.027219772, -0.004316151)
@@ -455,10 +455,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
 shape = SubResource("BoxShape3D_yjfkd")
 
 [node name="upper_arm_L" parent="Character/Human_proto_02/Prototype_Rig/Skeleton3D" index="2" unique_id=763477682]
-transform = Transform3D(-0.90737695, 0.31357837, 0.27988523, -0.33919156, -0.93954223, -0.046999447, 0.24822599, -0.13758098, 0.9588823, 1.8470423, 14.918937, -0.25251436)
+transform = Transform3D(-0.90737695, 0.31357837, 0.27988523, -0.33919156, -0.93954223, -0.046999447, 0.24822599, -0.13758098, 0.9588823, 1.8470423, 14.786532, -0.25251436)
 
 [node name="weapon_R" parent="Character/Human_proto_02/Prototype_Rig/Skeleton3D" index="3" unique_id=1986305157]
-transform = Transform3D(0.30573583, -0.5832383, 0.7525677, 0.9445401, 0.28530762, -0.16261287, -0.11987116, 0.7605473, 0.638121, -3.4695244, 8.530497, 0.56057)
+transform = Transform3D(0.3058478, -0.58288103, 0.75279903, 0.9445003, 0.28532842, -0.16280659, -0.119897954, 0.7608134, 0.6377988, -3.4694288, 8.398018, 0.56044996)
 
 [node name="Hitbox_R" type="Area3D" parent="Character/Human_proto_02/Prototype_Rig/Skeleton3D/weapon_R" index="1" unique_id=1849619102]
 transform = Transform3D(0.999962, -0.00792412, 0.0036101225, 0.0077967676, 0.9993907, 0.034019418, -0.0038772654, -0.033990107, 0.99941474, 0.0010185242, 0.01307106, -0.0018262863)

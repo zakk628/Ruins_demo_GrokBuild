@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dhtcney3af1ti"]
+
+[ext_resource type="Script" uid="uid://dhtcney3alouq" path="res://Scene/UI/TitleScreen.gd" id="1_script"]
+
+[node name="TitleScreen" type="Control" unique_id=463136366]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="." unique_id=85959884]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.07, 0.06, 0.05, 1)
+
+[node name="Center" type="CenterContainer" parent="." unique_id=1007118601]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Center" unique_id=2013802804]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="Center/VBox" unique_id=876265955]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.93, 0.88, 1)
+theme_override_font_sizes/font_size = 64
+text = "Ruin with Soul"
+horizontal_alignment = 1
+
+[node name="ButtonPlay" type="Button" parent="Center/VBox" unique_id=659185745]
+custom_minimum_size = Vector2(280, 52)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "進行遊戲"
+
+[node name="ButtonQuit" type="Button" parent="Center/VBox" unique_id=1174083073]
+custom_minimum_size = Vector2(280, 52)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "離開遊戲"

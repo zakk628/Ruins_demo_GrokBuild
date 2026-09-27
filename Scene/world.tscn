@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bcnipeinj6hay" path="res://Scene/Dummy/dummy_proto.tscn" id="3_ejll3"]
 [ext_resource type="PackedScene" uid="uid://br5oisowyd7j3" path="res://Scene/Character/human_v02.tscn" id="4_pcvp0"]
 [ext_resource type="PackedScene" uid="uid://dhyfc5yq3u0ec" path="res://Scene/Dummy/dummy_slender.tscn" id="4_scul4"]
+[ext_resource type="PackedScene" uid="uid://c4arena0blk01" path="res://Scene/Blockout/Arena_Blockout.tscn" id="5_arena"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oybrb"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -42,6 +43,7 @@ mesh = SubResource("BoxMesh_55aqw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=915066267]
 shape = SubResource("ConcavePolygonShape3D_oybrb")
+disabled = true
 
 [node name="PauseMenu" parent="." unique_id=1376896658 instance=ExtResource("2_ejll3")]
 
@@ -54,3 +56,5 @@ visible = false
 
 [node name="human" parent="." unique_id=1862271729 instance=ExtResource("4_pcvp0")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.5, 0)
+
+[node name="Arena_Blockout" parent="." unique_id=128118076 instance=ExtResource("5_arena")]

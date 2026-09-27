@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4columnblk01"]
+
+[sub_resource type="StandardMaterial3D" id="Mat_column"]
+albedo_color = Color(0.82, 0.8, 0.76, 1)
+
+[sub_resource type="CylinderMesh" id="Mesh_column"]
+top_radius = 1.0
+bottom_radius = 1.0
+height = 10.0
+radial_segments = 24
+
+[sub_resource type="CylinderShape3D" id="Shape_column"]
+height = 10.0
+radius = 1.0
+
+[node name="Column" type="StaticBody3D"]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("Mesh_column")
+surface_material_override/0 = SubResource("Mat_column")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("Shape_column")
+
+[node name="Grab" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.3, 1.15)
+
+[node name="Stand" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 1.15)
