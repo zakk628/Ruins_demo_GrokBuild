@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://dv72ok88a72ac" path="res://GDScript/Character/con_anime.gd" id="3_xnhpq"]
 [ext_resource type="Script" uid="uid://ov544348n713" path="res://GDScript/Character/con_camera.gd" id="4_7b525"]
 [ext_resource type="Script" uid="uid://d27wciwheqkb7" path="res://GDScript/Character/con_damage.gd" id="5_lqdqx"]
+[ext_resource type="Script" uid="uid://bkmntrailsl2a" path="res://GDScript/Character/trail_controller.gd" id="6_trail"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_xo2cf"]
 height = 19.0
@@ -13,8 +14,28 @@ radius = 3.0
 [sub_resource type="BoxShape3D" id="BoxShape3D_yjfkd"]
 size = Vector3(1, 6, 0.5)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_trll"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0.78, 0.93, 1, 0.62)
+
+[sub_resource type="QuadMesh" id="QuadMesh_trll"]
+material = SubResource("StandardMaterial3D_trll")
+size = Vector2(4, 5.6)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_lrtp0"]
 size = Vector3(1, 6, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_trrr"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0.78, 0.93, 1, 0.62)
+
+[sub_resource type="QuadMesh" id="QuadMesh_trrr"]
+material = SubResource("StandardMaterial3D_trrr")
+size = Vector2(4, 5.6)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kd4qi"]
 animation = &"A02_move_avoid01_roll"
@@ -429,22 +450,22 @@ shape = SubResource("CylinderShape3D_xo2cf")
 [node name="Human_proto_02" parent="Character" unique_id=1196033314 instance=ExtResource("2_tps6v")]
 
 [node name="Skeleton3D" parent="Character/Human_proto_02/Prototype_Rig" parent_id_path=PackedInt32Array(1196033314, 668524163) index="0" unique_id=449932767]
-bones/9/position = Vector3(-2.8674826e-06, -4, -8.800241)
-bones/19/rotation = Quaternion(0.25901094, 0.24588996, -0.033493746, 0.93345034)
-bones/43/rotation = Quaternion(0.25901088, -0.24588968, 0.03349393, 0.9334505)
-bones/69/rotation = Quaternion(0.9689954, 0.07684751, -0.09235039, 0.21590237)
-bones/70/rotation = Quaternion(0.24166702, 0.010642058, 0.038823448, 0.96952397)
-bones/71/rotation = Quaternion(-0.6648985, -0.030017402, 0.045622975, 0.7449346)
-bones/79/rotation = Quaternion(0.9689954, -0.07684751, 0.09235035, 0.21590237)
-bones/80/rotation = Quaternion(0.24166699, -0.010642063, -0.03882344, 0.96952397)
-bones/81/rotation = Quaternion(-0.6648985, 0.030017404, -0.04562297, 0.7449346)
-bones/89/position = Vector3(-4.4966896e-06, -4, -13.800241)
+bones/9/position = Vector3(-2.9174616e-06, -4, -8.953626)
+bones/19/rotation = Quaternion(0.25901932, 0.24611177, -0.033432197, 0.9333918)
+bones/43/rotation = Quaternion(0.25901908, -0.24611156, 0.03343234, 0.9333919)
+bones/69/rotation = Quaternion(0.9771671, 0.0675184, -0.08700723, 0.18170159)
+bones/70/rotation = Quaternion(0.16672182, 0.010818323, 0.026783608, 0.9855808)
+bones/71/rotation = Quaternion(-0.6344345, -0.026036939, 0.03970788, 0.7715168)
+bones/79/rotation = Quaternion(0.9771671, -0.06751841, 0.087007195, 0.18170156)
+bones/80/rotation = Quaternion(0.1667218, -0.010818321, -0.026783602, 0.9855808)
+bones/81/rotation = Quaternion(-0.6344345, 0.02603694, -0.03970788, 0.7715168)
+bones/89/position = Vector3(-4.5466686e-06, -4, -13.953626)
 
 [node name="spine_006" parent="Character/Human_proto_02/Prototype_Rig/Skeleton3D" index="0" unique_id=1771535050]
-transform = Transform3D(1, -1.2043111e-14, -2.379127e-13, 3.1068637e-14, 0.9999998, -5.9604645e-08, 2.5925011e-13, 1.4901161e-08, 1, -5.1780596e-13, 16.646816, 0.23359948)
+transform = Transform3D(1, -1.2043111e-14, -2.379127e-13, 3.1068637e-14, 0.9999998, -5.9604645e-08, 2.5925011e-13, 1.4901161e-08, 1, -5.1780596e-13, 16.8002, 0.23359948)
 
 [node name="weapon_L" parent="Character/Human_proto_02/Prototype_Rig/Skeleton3D" index="1" unique_id=1055718905]
-transform = Transform3D(0.305848, 0.5828803, -0.75279975, -0.9445004, 0.28532836, -0.16280738, 0.1198982, 0.76081395, 0.63779724, 3.4694276, 8.398019, 0.5604492)
+transform = Transform3D(0.30596566, 0.58250445, -0.7530428, -0.9444586, 0.28535032, -0.16301087, 0.11992663, 0.7610935, 0.63745826, 3.4693267, 8.551324, 0.5603234)
 
 [node name="Hitbox_L" type="Area3D" parent="Character/Human_proto_02/Prototype_Rig/Skeleton3D/weapon_L" index="1" unique_id=1646349965]
 transform = Transform3D(0.99983525, 0.016681602, -0.007233469, -0.01612638, 0.99734586, 0.07101998, 0.008399042, -0.07089165, 0.99744964, -0.0020008087, 0.027219772, -0.004316151)
@@ -454,11 +475,20 @@ collision_mask = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
 shape = SubResource("BoxShape3D_yjfkd")
 
+[node name="Trail_L" type="MeshInstance3D" parent="Character/Human_proto_02/Prototype_Rig/Skeleton3D/weapon_L" index="2" unique_id=1842201101]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 4.5, 0)
+visible = false
+cast_shadow = 0
+mesh = SubResource("QuadMesh_trll")
+
+[node name="TrailController" type="Node" parent="Character/Human_proto_02/Prototype_Rig/Skeleton3D/weapon_L/Trail_L" unique_id=1842201102]
+script = ExtResource("6_trail")
+
 [node name="upper_arm_L" parent="Character/Human_proto_02/Prototype_Rig/Skeleton3D" index="2" unique_id=763477682]
-transform = Transform3D(-0.90737695, 0.31357837, 0.27988523, -0.33919156, -0.93954223, -0.046999447, 0.24822599, -0.13758098, 0.9588823, 1.8470423, 14.786532, -0.25251436)
+transform = Transform3D(-0.90737695, 0.31357837, 0.27988523, -0.33919156, -0.93954223, -0.046999447, 0.24822599, -0.13758098, 0.9588823, 1.8470423, 14.939916, -0.25251436)
 
 [node name="weapon_R" parent="Character/Human_proto_02/Prototype_Rig/Skeleton3D" index="3" unique_id=1986305157]
-transform = Transform3D(0.3058478, -0.58288103, 0.75279903, 0.9445003, 0.28532842, -0.16280659, -0.119897954, 0.7608134, 0.6377988, -3.4694288, 8.398018, 0.56044996)
+transform = Transform3D(0.30596554, -0.5825051, 0.753042, 0.94445866, 0.28535005, -0.1630105, -0.11992605, 0.7610931, 0.63745964, -3.4693284, 8.551323, 0.5603231)
 
 [node name="Hitbox_R" type="Area3D" parent="Character/Human_proto_02/Prototype_Rig/Skeleton3D/weapon_R" index="1" unique_id=1849619102]
 transform = Transform3D(0.999962, -0.00792412, 0.0036101225, 0.0077967676, 0.9993907, 0.034019418, -0.0038772654, -0.033990107, 0.99941474, 0.0010185242, 0.01307106, -0.0018262863)
@@ -467,6 +497,15 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Character/Human_proto_02/Prototype_Rig/Skeleton3D/weapon_R/Hitbox_R" unique_id=826577273]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
 shape = SubResource("BoxShape3D_lrtp0")
+
+[node name="Trail_R" type="MeshInstance3D" parent="Character/Human_proto_02/Prototype_Rig/Skeleton3D/weapon_R" index="2" unique_id=1842201103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 4.5, 0)
+visible = false
+cast_shadow = 0
+mesh = SubResource("QuadMesh_trrr")
+
+[node name="TrailController" type="Node" parent="Character/Human_proto_02/Prototype_Rig/Skeleton3D/weapon_R/Trail_R" unique_id=1842201104]
+script = ExtResource("6_trail")
 
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=102984085]
 root_node = NodePath("../Character/Human_proto_02")

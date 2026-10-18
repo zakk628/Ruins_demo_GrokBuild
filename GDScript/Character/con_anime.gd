@@ -2,10 +2,14 @@
 extends Node
 
 @onready var anim_tree: AnimationTree = $"../../AnimationTree"
+@onready var trail_l: Node = get_node_or_null("../../Character/Human_proto_02/Prototype_Rig/Skeleton3D/weapon_L/Trail_L/TrailController")
+@onready var trail_r: Node = get_node_or_null("../../Character/Human_proto_02/Prototype_Rig/Skeleton3D/weapon_R/Trail_R/TrailController")
 
 func _ready():
 	if anim_tree:
 		anim_tree.active = true
+	if trail_l == null or trail_r == null:
+		push_warning("找不到左右手 TrailController，揮擊軌跡不會播放")
 
 # ——————————————— normal_state ———————————————
 func update_normal_state(blend_value: float):
@@ -117,6 +121,11 @@ func _start_combo_sequence():
 
 func trigger_combo(step: int):
 	var blend_value = combo_blend_values[step - 1]
+
+	if trail_l and trail_l.has_method("start_trail"):
+		trail_l.start_trail()
+	if trail_r and trail_r.has_method("start_trail"):
+		trail_r.start_trail()
 
 	if step == 1:
 		anim_tree.set("parameters/fight_state/conditions/com_01", true)
